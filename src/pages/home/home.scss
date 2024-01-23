@@ -1,0 +1,30 @@
+page-home {
+  ::-webkit-scrollbar {
+    display: none;
+}
+  .contenedor{
+    max-width: 500px;
+    padding: 20px;
+    
+  }
+     
+  ion-label{
+        font-size: 0.8em !important;
+         }
+
+  button{
+         
+           padding: 20px;
+         }
+
+  label{
+          font-size: 0.6em;
+          display: block;
+          text-align: center;
+          padding: 20px;
+          }
+  ion-card{
+    padding: 15px;
+  }
+
+ }

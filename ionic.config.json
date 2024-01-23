@@ -1,0 +1,22 @@
+{
+  "name": "demo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/clienteapi",
+      "proxyUrl": "http://192.168.2.7:7010"
+    },
+    {
+      "path": "/usuarioapi",
+      "proxyUrl": "http://192.168.2.7:8089"
+    },
+    {
+      "path": "/urlapi",
+      "proxyUrl": "http://192.168.2.7:8080"
+    }
+   
+  ]
+}

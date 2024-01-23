@@ -1,0 +1,55 @@
+<!--
+  Generated template for the DatosMpPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="contenedor">
+
+  <ion-navbar>
+    <ion-title>Despachos MP</ion-title>
+  </ion-navbar>
+
+  </ion-header>
+
+
+<ion-content>
+  <button *ngFor="let ccos of datosCcos" ion-button full small color="secondary">Centro de Costo: {{ccos.nombre}}</button>
+  <div class="contenedor">
+
+<ion-list *ngFor="let dato of datosMP">
+  <ion-list-header [hidden]="dato.numeroDmov>1" class="cabecera">
+        <div (click)="muestraDet(dato.numeroComp)" *ngIf="dato.numeroDmov==1">
+    {{dato.codigoTran}}  {{dato.nombreTran}} <br>
+     Secuencial: {{dato.numeroSec}} Fecha: {{dato.fecha}}<br>
+ <button ion-button (click)="marcaTodoRecibido(dato.numeroComp,dato)" [hidden]="dato.numeroComp!=numComp" small full>Recibir Todo</button>
+     </div>
+  </ion-list-header>
+    <ion-item [hidden]="dato.numeroComp!=numComp">
+     <label>{{dato.codigoProd}}</label> <br>
+     <p>{{dato.nombreProd}}</p>
+
+       <button ion-button color="detalles" outline  item-end >{{dato.cantidad}}</button>
+       <button ion-button small (click)="marcaRecibido(dato.numeroComp,dato.numeroDmov,dato.codigoProd,dato)" item-end>Recibir</button>
+       
+   </ion-item>
+
+</ion-list>
+<ion-label align-text="right">*</ion-label>
+</div>
+</ion-content>
+
+<ion-footer class="contenedor">
+    <ion-item *ngFor="let empr of datosEmpresa">
+        <ion-icon name="cube"></ion-icon>
+        {{empr.nombre}}
+       <button ion-button color="detalles" item-end *ngFor="let usua of datosUsuario">
+               {{usua.nombre}}
+
+        </button>
+        <button ion-button color="detalles" item-end icon-only>
+            <ion-icon name="person"></ion-icon>
+        </button>
+
+      </ion-item>
+</ion-footer>

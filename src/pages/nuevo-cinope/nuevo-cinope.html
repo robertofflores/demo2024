@@ -1,0 +1,26 @@
+<!--
+  Generated template for the NuevoCinopePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Agregar Op. - Control Ing.</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <!-- <ion-item> -->
+        <ion-select [(ngModel)]="operacion" placeholder="Escoja Operación" style="max-width: 100%;width: 100%;">
+            <ion-option *ngFor="let dato of datosOpera" [value]="dato.codigoProd">{{dato.nombre}}</ion-option>
+        </ion-select>
+      <!-- </ion-item> -->
+
+     
+
+</ion-content>

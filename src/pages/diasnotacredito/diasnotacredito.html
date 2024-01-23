@@ -1,0 +1,44 @@
+<!--
+  Generated template for the DiasnotacreditoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Número de Días NC</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <!-- <ion-label color="danger" text-right [hidden]="!showNumDias">{{msjNumDias}}</ion-label> -->
+    <!-- <ion-label color="danger" text-right [hidden]="false">* Campo admite sólo Números de 0 a 365.</ion-label> -->
+    <ion-list>
+        <ion-item *ngFor="let dato of datosSucu; let i = index">
+           <ion-label>{{dato.nombre}}</ion-label>
+           <ion-input type="text" [(ngModel)]="dato.numdiasncre" text-right></ion-input>
+            <button ion-button item-end (click)="actualizarDias(dato.codigo,dato.numdiasncre)">
+              <ion-icon name="paper-plane" only-icon></ion-icon>
+            </button>
+         </ion-item>
+         <ion-label align-text="right">*</ion-label>
+    </ion-list>
+
+</ion-content>
+<ion-footer class="contenedor">
+    <ion-item *ngFor="let empr of datosEmpresa">
+        <ion-icon name="cube"></ion-icon>
+        {{empr.nombre}}
+       <button ion-button color="detalles" item-end *ngFor="let usua of datosUsuario">
+               {{usua.nombre}}
+          
+        </button>  
+        <button ion-button color="detalles" item-end icon-only>
+            <ion-icon name="person"></ion-icon>
+        </button> 
+       
+      </ion-item>
+ </ion-footer>

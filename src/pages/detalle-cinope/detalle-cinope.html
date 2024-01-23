@@ -1,0 +1,44 @@
+<!--
+  Generated template for the DetalleCinopePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Operaciones - Control Ing.</ion-title>
+    <ion-fab top right edge>
+        <button ion-fab mini (click)="goPage()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+   
+  <ion-list>
+    <ion-item *ngFor="let dato of datosCinope">
+     
+    <button ion-button outline color="detalles">{{dato.fila}}</button> 
+    <button ion-button round color="primary">OP. {{dato.codOpera}}</button> 
+    <button ion-button outline round color="update">{{dato.cantidad}}</button> 
+    <button ion-button round color="detalles">{{dato.subtotal}}</button> 
+    <button ion-button outline color="detalles">{{dato.antecesor}}</button>
+    <button ion-button color="danger" item-end><ion-icon name="trash"></ion-icon></button>
+    <button ion-button color="secondary" item-end><ion-icon name="create"></ion-icon></button>
+
+  
+      
+  
+      <p text-wrap><b>Operación:</b> {{dato.nomOpera}}</p>
+      <p text-wrap><b>Detalle:</b> {{dato.detalle}}</p>
+    </ion-item>
+   
+      
+   
+  
+  </ion-list>
+
+</ion-content>
